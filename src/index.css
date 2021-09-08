@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  font-size: 16px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: inherit;
+  background-color: transparent;
+}
