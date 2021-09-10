@@ -1,0 +1,141 @@
+.PageContainer {
+  padding: 30px;
+  padding-top: 90px;
+  display: flex;
+  justify-content: flex-start;
+}
+.PageImg {
+  width: 300px;
+  height: 444px;
+  margin-right: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+.PagePoster {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+
+  object-fit: cover;
+}
+.PageDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 0;
+}
+
+.PageDetailsTitle {
+  margin-left: 12px;
+  color: rgba(47, 44, 44);
+  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12);
+}
+.PageDetailsText {
+  color: rgb(103, 100, 100);
+  font-weight: 500;
+  text-align: left;
+}
+
+.Genres {
+  display: flex;
+  color: rgb(103, 100, 100);
+  font-weight: 500;
+}
+
+.GenresItem:not(:last-child) {
+  margin-right: 12px;
+}
+
+.DetailsContainer {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(180, 176, 176, 0.9);
+  border-bottom: 1px solid rgba(180, 176, 176, 0.9);
+}
+
+.DetailsList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Details:not(:last-child) {
+  margin-right: 30px;
+}
+.DetailsItem {
+  padding: 28px 0;
+
+  font-weight: 500;
+  color: #0f7afc;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.DetailsItemActive,
+.DetailsItem:hover {
+  color: #cf0000;
+}
+
+.PageReviews {
+  padding: 30px;
+}
+.DetailsReviews {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(180, 176, 176, 0.9);
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+.ReviewsTitle {
+  margin-left: 12px;
+  margin-bottom: 8px;
+  color: rgba(47, 44, 44);
+  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12);
+}
+.ReviewsText {
+  color: rgb(103, 100, 100);
+  font-weight: 500;
+  text-align: left;
+}
+
+.ActorsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+.ActorsItem {
+  width: 230px;
+  height: 360px;
+  padding: 15px;
+  margin: 10px;
+  background-color: rgba(244, 244, 244, 0.65);
+  border: 1px solid rgba(180, 176, 176, 0.9);
+  border-radius: 5px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.ActorsTitle {
+  margin-left: 12px;
+  margin-bottom: 8px;
+  color: rgba(47, 44, 44);
+  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12);
+}
+.ActorsText {
+  color: rgb(103, 100, 100);
+  font-weight: 500;
+  text-align: left;
+}

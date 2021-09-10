@@ -23,9 +23,6 @@
 .NavigationLink:not(:last-child) {
   margin-right: 15px;
 }
-.NavigationLinkActive {
-  color: #cf0000;
-}
 
 .NavigationLink:hover,
 .NavigationLinkActive {

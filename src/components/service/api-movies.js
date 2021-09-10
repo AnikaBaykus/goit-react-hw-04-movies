@@ -18,20 +18,20 @@ export function fetchSearchMovies(query) {
   );
 }
 
-export function fetchDetailsMovie(movieID) {
+export function fetchDetailsMovie(movieId) {
   return fetchWithErrorHandling(
-    `${URL}/movie/${movieID}?api_key=${API_KEY}&language=en-US`,
+    `${URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
   );
 }
 
-export function fetchCastMovie(movieID) {
+export function fetchCastMovie(movieId) {
   return fetchWithErrorHandling(
-    `${URL}/movie/${movieID}/credits?api_key=${API_KEY}&language=en-US`,
+    `${URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
   );
 }
 
-export function fetchReviewsMovie(movieID) {
+export function fetchReviewsMovie(movieId) {
   return fetchWithErrorHandling(
-    `${URL}/movie/${movieID}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
+    `${URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
   );
 }

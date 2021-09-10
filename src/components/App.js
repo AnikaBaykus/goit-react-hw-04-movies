@@ -1,18 +1,19 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Route, Switch } from 'react-router';
 import './App.css';
 import HomePage from './HomePage';
-import MovieDetailsPage from './MovieDetailsPage';
+import MoviesPage from './MoviesPage';
 import MoviesSearchForm from './MoviesSearchForm';
 import Navigation from './Navigation';
 import NotFound from './NotFound';
 
 function App(options) {
-  const [movies, setMovies] = useState('');
+  // const [movies, setMovies] = useState('');
+  // console.log(movies);
 
-  const handleSearchFormSubmit = data => {
-    setMovies(data.trim());
-  };
+  // const handleSearchFormSubmit = data => {
+  //   setMovies(data.trim());
+  // };
 
   return (
     <div className="App">
@@ -26,7 +27,7 @@ function App(options) {
           <MoviesSearchForm />
         </Route>
         <Route path="/movies/:movieId">
-          <MovieDetailsPage />
+          <MoviesPage />
         </Route>
         <Route>
           <NotFound />
