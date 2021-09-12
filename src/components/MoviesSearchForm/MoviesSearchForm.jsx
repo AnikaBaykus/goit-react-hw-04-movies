@@ -2,20 +2,22 @@ import s from './MoviesSearchForm.module.css';
 import { useState } from 'react';
 
 export default function MoviesSearchForm(options) {
-  const [movies, setMovies] = useState('');
+  // const [movies, setMovies] = useState('');
+  const [query, setQuery] = useState('');
 
   const handleNameChange = event => {
-    setMovies(event.currentTarget.value.toLowerCase());
+    setQuery(event.currentTarget.value.toLowerCase());
   };
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (movies.trim() === '') {
-      return console.log('нет такого фильма');
+    if (query.trim() === '') {
+      console.log('нет такого фильма');
+      return;
     }
-    options.onSearchFormSubmit(movies);
-    setMovies('');
+    options.onSearchFormSubmit(query);
+    setQuery('');
   };
 
   return (
@@ -26,7 +28,7 @@ export default function MoviesSearchForm(options) {
         autoComplete="off"
         autoFocus
         placeholder="Search movie"
-        value={movies}
+        value={query}
         onChange={handleNameChange}
       />
       <button type="submit" className={s.SearchFormButton}>

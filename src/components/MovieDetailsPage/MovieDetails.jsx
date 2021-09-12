@@ -1,9 +1,11 @@
 import s from './MovieDetailsPage.module.css';
+
 import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
 
 export default function MovieDetails(options) {
   const { url } = useRouteMatch();
+
   return (
     <div className={s.DetailsContainer}>
       <ul className={s.DetailsList}>

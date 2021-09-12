@@ -14,7 +14,7 @@ export function fetchPopularMovies() {
 
 export function fetchSearchMovies(query) {
   return fetchWithErrorHandling(
-    `${URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`,
+    `${URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`,
   );
 }
 

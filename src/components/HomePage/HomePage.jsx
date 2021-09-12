@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
 import * as APIpopularMovies from '../service/api-movies';
+
 import s from './HomePage.module.css';
 import photo from '../../img/no_poster.jpg';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     APIpopularMovies.fetchPopularMovies()
@@ -21,7 +23,12 @@ export default function HomePage() {
         {movies &&
           movies.map(movie => (
             <li className={s.MoviesItem} key={movie.id}>
-              <Link to={`movies/${movie.id}`}>
+              <Link
+                to={{
+                  pathname: `movies/${movie.id}`,
+                  state: { from: location },
+                }}
+              >
                 <h2 className={s.MoviesItemTitle}>{movie.title}</h2>
 
                 <img

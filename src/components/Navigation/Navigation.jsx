@@ -10,7 +10,7 @@ const Navigation = () => {
         activeClassName={s.NavigationLinkActive}
         to="/"
       >
-        HomePage
+        Home
       </NavLink>
       <NavLink
         className={s.NavigationLink}

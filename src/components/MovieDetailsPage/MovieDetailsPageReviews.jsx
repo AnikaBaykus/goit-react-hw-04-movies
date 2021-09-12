@@ -1,16 +1,17 @@
 import s from './MovieDetailsPage.module.css';
+
 import * as APIdetailsMovieReviews from '../service/api-movies';
+
 import { useState, useEffect } from 'react';
 
 export default function MovieDetailsPageReviews(options) {
   const { movieId } = options;
-  console.log(movieId);
+
   const [reviews, setReviews] = useState('');
 
   useEffect(() => {
     APIdetailsMovieReviews.fetchReviewsMovie(movieId).then(reviews => {
       setReviews(reviews);
-      console.log(reviews);
     });
   }, [movieId]);
 

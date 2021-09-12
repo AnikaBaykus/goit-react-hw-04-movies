@@ -1,17 +1,18 @@
 import s from './MovieDetailsPage.module.css';
+
 import * as APIdetailsMovieCast from '../service/api-movies';
+
 import { useState, useEffect } from 'react';
+
 import photo from '../../img/no_poster.jpg';
 
 export default function MovieDetailsPageCast(options) {
   const { movieId } = options;
-  console.log(movieId);
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
     APIdetailsMovieCast.fetchCastMovie(movieId).then(actors => {
       setActors(actors);
-      console.log(actors);
     });
   }, [movieId]);
 
