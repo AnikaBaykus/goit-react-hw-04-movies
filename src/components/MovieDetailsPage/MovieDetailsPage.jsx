@@ -20,6 +20,8 @@ export default function MovieDetailsPage(options) {
   const { movieId } = useParams();
   const { url } = useRouteMatch();
   const [movie, setMovie] = useState('');
+  const { newLocation } = options;
+  console.log('передаём в каст и ревью', newLocation);
 
   const location = useLocation();
   const history = useHistory();
@@ -66,7 +68,7 @@ export default function MovieDetailsPage(options) {
             </ul>
           </div>
         </div>
-        <MovieDetails></MovieDetails>
+        <MovieDetails newLocation={newLocation}></MovieDetails>
         <Suspense fallback={<p>Загружаю...</p>}>
           <Switch>
             <Route exact path={`${url}/reviews`}>

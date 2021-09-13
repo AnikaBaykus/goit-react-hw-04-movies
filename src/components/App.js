@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import './App.css';
 // import HomePage from './HomePage';
 // import MovieDetailsPage from './MovieDetailsPage/MovieDetailsPage';
@@ -23,6 +23,15 @@ const NotFound = lazy(() =>
 );
 
 function App(options) {
+  const [newLocationSearch, setNewLocationSearch] = useState();
+  const [newLocation, setNewLocation] = useState();
+  console.log(newLocation, 'в App');
+
+  const updateData = (locationsSearch, location) => {
+    setNewLocationSearch(locationsSearch);
+    setNewLocation(location);
+    console.log('пришло в App', newLocation, location);
+  };
   return (
     <div className="App">
       <Navigation />
@@ -33,10 +42,10 @@ function App(options) {
             <HomePage />
           </Route>
           <Route exact path="/movies">
-            <MoviesPage />
+            <MoviesPage updateData={updateData} />
           </Route>
           <Route path="/movies/:movieId">
-            <MovieDetailsPage />
+            <MovieDetailsPage newLocation={newLocation} />
           </Route>
           <Route>
             <NotFound />

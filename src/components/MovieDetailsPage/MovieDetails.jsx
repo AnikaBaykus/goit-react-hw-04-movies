@@ -5,6 +5,8 @@ import { useRouteMatch } from 'react-router';
 
 export default function MovieDetails(options) {
   const { url } = useRouteMatch();
+  const { newLocation } = options;
+  const { search } = options.newLocation;
 
   return (
     <div className={s.DetailsContainer}>
@@ -13,7 +15,13 @@ export default function MovieDetails(options) {
           <NavLink
             activeClassName={s.DetailsItemActive}
             className={s.DetailsItem}
-            to={`${url}/cast`}
+            to={{
+              pathname: `${url}/cast`,
+              state: {
+                search: newLocation && search ? search : '',
+                from: newLocation,
+              },
+            }}
           >
             Cast
           </NavLink>
@@ -22,7 +30,13 @@ export default function MovieDetails(options) {
           <NavLink
             activeClassName={s.DetailsItemActive}
             className={s.DetailsItem}
-            to={`${url}/reviews`}
+            to={{
+              pathname: `${url}/reviews`,
+              state: {
+                search: newLocation && search ? search : '',
+                from: newLocation,
+              },
+            }}
           >
             Reviews
           </NavLink>

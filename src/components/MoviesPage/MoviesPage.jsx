@@ -13,6 +13,7 @@ const MoviesSearchResult = lazy(() =>
 export default function MoviesPage(options) {
   const history = useHistory();
   const location = useLocation();
+  const { updateData } = options;
 
   const [query, setQuery] = useState('');
   const [searchMovie, setSearchMovie] = useState([]);
@@ -40,7 +41,7 @@ export default function MoviesPage(options) {
   const handleSearchFormSubmit = data => {
     setQuery(data.trim());
     history.push({ ...location, search: `query=${data}` });
-    console.log(history);
+    // console.log(history);
   };
   return (
     <>
@@ -54,6 +55,7 @@ export default function MoviesPage(options) {
             query={query}
             searchMovie={searchMovie}
             locationSearch={location.search}
+            updateData={updateData}
           />
         </Suspense>
       )}
