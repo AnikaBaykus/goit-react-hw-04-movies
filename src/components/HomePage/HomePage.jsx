@@ -6,9 +6,11 @@ import * as APIpopularMovies from '../service/api-movies';
 import s from './HomePage.module.css';
 import photo from '../../img/no_poster.jpg';
 
-export default function HomePage() {
+export default function HomePage(options) {
   const [movies, setMovies] = useState([]);
   const location = useLocation();
+  const { updateData } = options;
+  // console.log('локация с главной страницы для передачи в апп', location);
 
   useEffect(() => {
     APIpopularMovies.fetchPopularMovies()
@@ -24,9 +26,10 @@ export default function HomePage() {
           movies.map(movie => (
             <li className={s.MoviesItem} key={movie.id}>
               <Link
+                onClick={() => updateData(location)}
                 to={{
                   pathname: `movies/${movie.id}`,
-                  state: { from: location },
+                  state: location,
                 }}
               >
                 <h2 className={s.MoviesItemTitle}>{movie.title}</h2>

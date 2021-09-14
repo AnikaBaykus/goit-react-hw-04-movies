@@ -23,15 +23,12 @@ const NotFound = lazy(() =>
 );
 
 function App(options) {
-  const [newLocationSearch, setNewLocationSearch] = useState();
-  const [newLocation, setNewLocation] = useState();
-  console.log(newLocation, 'в App');
-
-  const updateData = (locationsSearch, location) => {
-    setNewLocationSearch(locationsSearch);
+  const [newLocation, setNewLocation] = useState({});
+  // console.log(newLocation, 'в App');
+  const updateData = location => {
     setNewLocation(location);
-    console.log('пришло в App', newLocation, location);
   };
+  // console.log('локацию которую получили в Апп', newLocation);
   return (
     <div className="App">
       <Navigation />
@@ -39,7 +36,7 @@ function App(options) {
       <Suspense fallback={<p>Loading...</p>}>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage updateData={updateData} />
           </Route>
           <Route exact path="/movies">
             <MoviesPage updateData={updateData} />

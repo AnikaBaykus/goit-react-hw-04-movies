@@ -21,7 +21,6 @@ export default function MovieDetailsPage(options) {
   const { url } = useRouteMatch();
   const [movie, setMovie] = useState('');
   const { newLocation } = options;
-  console.log('передаём в каст и ревью', newLocation);
 
   const location = useLocation();
   const history = useHistory();
@@ -33,7 +32,7 @@ export default function MovieDetailsPage(options) {
   }, [movieId]);
 
   const onGoBack = () => {
-    history.push(location?.state?.from ?? '/');
+    history.push(location?.state ?? '/');
   };
 
   return (

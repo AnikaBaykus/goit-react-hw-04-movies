@@ -3,10 +3,11 @@ import s from './MovieDetailsPage.module.css';
 import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
 
+
 export default function MovieDetails(options) {
   const { url } = useRouteMatch();
   const { newLocation } = options;
-  const { search } = options.newLocation;
+  // console.log('передаём в каст и ревью', newLocation);
 
   return (
     <div className={s.DetailsContainer}>
@@ -17,10 +18,7 @@ export default function MovieDetails(options) {
             className={s.DetailsItem}
             to={{
               pathname: `${url}/cast`,
-              state: {
-                search: newLocation && search ? search : '',
-                from: newLocation,
-              },
+              state: newLocation,
             }}
           >
             Cast
@@ -32,10 +30,7 @@ export default function MovieDetails(options) {
             className={s.DetailsItem}
             to={{
               pathname: `${url}/reviews`,
-              state: {
-                search: newLocation && search ? search : '',
-                from: newLocation,
-              },
+              state: newLocation,
             }}
           >
             Reviews

@@ -2,8 +2,8 @@ import s from './MoviesSearchForm.module.css';
 import { useState } from 'react';
 
 export default function MoviesSearchForm(options) {
-  // const [movies, setMovies] = useState('');
   const [query, setQuery] = useState('');
+  const { onSearchFormSubmit } = options;
 
   const handleNameChange = event => {
     setQuery(event.currentTarget.value.toLowerCase());
@@ -16,7 +16,7 @@ export default function MoviesSearchForm(options) {
       console.log('нет такого фильма');
       return;
     }
-    options.onSearchFormSubmit(query);
+    onSearchFormSubmit(query);
     setQuery('');
   };
 

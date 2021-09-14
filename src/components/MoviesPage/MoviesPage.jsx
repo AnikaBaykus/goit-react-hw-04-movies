@@ -14,6 +14,7 @@ export default function MoviesPage(options) {
   const history = useHistory();
   const location = useLocation();
   const { updateData } = options;
+  console.log(updateData);
 
   const [query, setQuery] = useState('');
   const [searchMovie, setSearchMovie] = useState([]);
@@ -45,16 +46,12 @@ export default function MoviesPage(options) {
   };
   return (
     <>
-      <MoviesSearchForm
-        query={query}
-        onSearchFormSubmit={handleSearchFormSubmit}
-      />
+      <MoviesSearchForm onSearchFormSubmit={handleSearchFormSubmit} />
       {query !== '' && (
         <Suspense fallback={<p>Loading...</p>}>
           <MoviesSearchResult
             query={query}
             searchMovie={searchMovie}
-            locationSearch={location.search}
             updateData={updateData}
           />
         </Suspense>
